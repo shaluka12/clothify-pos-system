@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="1152.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminUserFormController">
+   <children>
+      <AnchorPane prefHeight="671.0" prefWidth="1280.0">
+         <children>
+            <BorderPane prefHeight="646.0" prefWidth="1102.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="646.0" prefWidth="230.0" style="-fx-background-color: #82ccdd;" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="646.0" prefWidth="230.0" style="-fx-background-color: #82ccdd; -fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="113.0" fitWidth="109.0" layoutX="60.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/user.png" />
+                                 </image>
+                              </ImageView>
+                              <Text fill="#0a3d62" layoutX="63.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome,">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#0a3d62" layoutX="62.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sheshan.!">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Line endX="87.60002136230469" layoutX="121.0" layoutY="216.0" startX="-100.0" />
+                              <JFXButton layoutX="56.0" layoutY="348.0" onAction="#btnEmployeeOnAction" prefHeight="38.0" prefWidth="114.0" scaleShape="false" style="-fx-background-color: #0a3d62; -fx-background-radius: 100; -fx-padding: 10;" text="Employees" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXButton layoutX="46.0" layoutY="561.0" onAction="#btnLogOutOnAction" prefHeight="48.0" prefWidth="136.0" scaleShape="false" style="-fx-background-color: #0a3d62; -fx-background-radius: 100; -fx-padding: 10;" text="LogOut" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/logout.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXButton layoutX="57.0" layoutY="269.0" onAction="#btnDashBordOnAction" prefHeight="38.0" prefWidth="113.0" ripplerFill="BLACK" scaleShape="false" style="-fx-background-color: #0a3d62; -fx-background-radius: 100; -fx-padding: 10;" text="Dashboard" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="30.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #82ccdd;" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="Employees" layoutX="12.0" layoutY="12.0" prefHeight="622.0" prefWidth="896.0" style="-fx-background-color: #c7ecee; -fx-background-radius: 10;" visible="false">
+                           <children>
+                              <JFXTextField fx:id="txtSearchEmployee" focusColor="#64cadf" layoutX="29.0" layoutY="24.0" prefHeight="34.0" prefWidth="287.0" promptText="Search By Mail" unFocusColor="#ccfcff" />
+                              <JFXButton layoutX="316.0" layoutY="22.0" minWidth="51.0" onAction="#btnSearchEmployeeOnAction" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #0a3d62;">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TableView fx:id="tblEmployee" layoutX="29.0" layoutY="90.0" prefHeight="258.0" prefWidth="838.0" style="-fx-background-radius: 20; -fx-border-radius: 20;">
+                                <columns>
+                                  <TableColumn fx:id="colEmployeeID" prefWidth="119.9999771118164" text="Employee_ID" />
+                                    <TableColumn fx:id="colName" prefWidth="235.99996948242188" text="Name" />
+                                    <TableColumn fx:id="colEmail" prefWidth="182.39999389648438" text="Email" />
+                                    <TableColumn fx:id="colPassword" prefWidth="175.199951171875" text="Password" />
+                                    <TableColumn fx:id="colIsAdmin" prefWidth="128.00006103515625" text="IsAdmin" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="txtEmployeeID" layoutX="49.0" layoutY="410.0" prefHeight="26.0" prefWidth="229.0" promptText="EmployeeID" />
+                              <TextField fx:id="txtName" layoutX="314.0" layoutY="410.0" prefHeight="26.0" prefWidth="229.0" promptText="Name" />
+                              <TextField fx:id="txtEmail" layoutX="617.0" layoutY="410.0" prefHeight="26.0" prefWidth="229.0" promptText="Email" />
+                              <TextField fx:id="txtPassword" layoutX="49.0" layoutY="491.0" prefHeight="26.0" prefWidth="229.0" promptText="Password" />
+                              <JFXComboBox fx:id="cmbIsAdmin" layoutX="315.0" layoutY="490.0" prefHeight="28.0" prefWidth="114.0" unFocusColor="#93aeae" />
+                              <JFXButton layoutX="509.0" layoutY="488.0" onAction="#btnAddOnAction" prefHeight="38.0" prefWidth="69.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 100; -fx-padding: 10;" text="Add" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="640.0" layoutY="488.0" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="75.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 100; -fx-padding: 10;" text="Delete" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></JFXButton>
+                              <JFXButton layoutX="769.0" layoutY="488.0" onAction="#btnUpdateOnAction" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #0a3d62; -fx-background-radius: 100; -fx-padding: 10;" text="Update" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="DashBoard" layoutX="-0.8" layoutY="8.8" prefHeight="626.0" prefWidth="911.0" style="-fx-background-color: #c7ecee; -fx-background-radius: 10;" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="9.0">
+                           <children>
+                              <AnchorPane layoutX="35.0" layoutY="34.0" prefHeight="157.0" prefWidth="270.0" style="-fx-background-color: #60a3bc; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="30.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/emploers.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="133.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employers">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="lblEmployers" layoutX="160.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="325.0" layoutY="34.0" prefHeight="157.0" prefWidth="270.0" style="-fx-background-color: #60a3bc; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="28.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/order.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="154.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orders">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="lblOrders" layoutX="167.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="615.0" layoutY="34.0" prefHeight="157.0" prefWidth="270.0" style="-fx-background-color: #60a3bc; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="34.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/income.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="147.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="lblEarned" layoutX="162.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <AreaChart alternativeColumnFillVisible="true" layoutX="46.0" layoutY="213.0" prefHeight="400.0" prefWidth="819.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
